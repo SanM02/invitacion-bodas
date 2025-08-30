@@ -1,0 +1,52 @@
+// Cuenta regresiva hasta el 20 de diciembre de 2025, 10:00 AM
+function updateCountdown() {
+    const targetDate = new Date('2025-12-20T10:00:00');
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+        document.getElementById('countdownDisplay').innerHTML = '<div>¡Llegó el gran día!</div>';
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('countdownDisplay').innerHTML = `
+        <div class="count-item">
+            <div class="simple-count-circle"><span id="days">${days}</span></div>
+            <label>días</label>
+        </div>
+        <div class="count-item">
+            <div class="simple-count-circle"><span id="hours">${hours}</span></div>
+            <label>horas</label>
+        </div>
+        <div class="count-item">
+            <div class="simple-count-circle"><span id="minutes">${minutes}</span></div>
+            <label>minutos</label>
+        </div>
+        <div class="count-item">
+            <div class="simple-count-circle"><span id="seconds">${seconds}</span></div>
+            <label>segundos</label>
+        </div>
+    `;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+function confirmarAsistencia() {
+    // Reemplaza el número y el mensaje por el que desees
+    var telefono = '595986489347'; // Ejemplo: 595981234567
+    var mensaje = encodeURIComponent('¡Hola! Quiero confirmar mi asistencia a la boda de Mirian & Koky.');
+    var url = `https://wa.me/${telefono}?text=${mensaje}`;
+    window.open(url, '_blank');
+}
+
+function verUbicacion() {
+    // Reemplaza la URL por la ubicación real del evento
+    var url = 'https://goo.gl/google.com/maps/place/Quinta+Don+Aniceto/data=!4m2!3m1!1s0x0:0x7531a20b708a7c15?sa=X&ved=1t:2428&ictx=111/';
+    window.open(url, '_blank');
+}
