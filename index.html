@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda - Mirian & Koky</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Audio de fondo -->
+    <audio id="backgroundMusic" loop>
+        <source src="Melendi - La promesa (Videoclip oficial) [7XPmRUp_Yf4].mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento audio.
+    </audio>
+    
+    <!-- Control de música -->
+    <div class="music-control" id="musicControl">
+        <button onclick="toggleMusic()" id="musicButton">
+            <i class="fas fa-music" id="musicIcon"></i>
+        </button>
+    </div>
+
+    <!-- Partículas de fondo -->
+    <div class="particles-container" id="particlesContainer"></div>
+
+    <!-- Contenedor principal angosto -->
+    <div class="main-container">
+        <!-- Invitación principal -->
+        <div class="invitation-container" id="mainInvitation">
+        <!-- Header principal con parallax -->
+        <header class="main-header" id="mainHeader">
+            <div class="header-bg-elements">
+                <div class="floating-element el-1">
+                    <svg viewBox="0 0 100 100" width="20" height="20">
+                        <path d="M50,85 C25,65 10,45 10,30 C10,20 20,10 30,10 C40,10 50,20 50,30 C50,20 60,10 70,10 C80,10 90,20 90,30 C90,45 75,65 50,85 Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="floating-element el-2">
+                    <svg viewBox="0 0 100 100" width="18" height="18">
+                        <path d="M50,10 L60,40 L90,40 L70,60 L80,90 L50,75 L20,90 L30,60 L10,40 L40,40 Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="floating-element el-3">
+                    <svg viewBox="0 0 100 100" width="16" height="16">
+                        <circle cx="50" cy="50" r="25" fill="currentColor" opacity="0.7"/>
+                        <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="floating-element el-4">
+                    <svg viewBox="0 0 100 100" width="22" height="22">
+                        <circle cx="50" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="3"/>
+                        <circle cx="50" cy="75" r="15" fill="none" stroke="currentColor" stroke-width="3"/>
+                        <line x1="50" y1="45" x2="50" y2="60" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="floating-element el-5">
+                    <svg viewBox="0 0 100 100" width="24" height="24">
+                        <path d="M50,20 Q70,40 50,60 Q30,40 50,20 Z" fill="currentColor" opacity="0.8"/>
+                        <path d="M50,30 Q60,40 50,50 Q40,40 50,30 Z" fill="rgba(255,255,255,0.3)"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="header-overlay"></div>
+            <div class="header-content">
+                <!-- Eliminado el cuadro header-frame -->
+                    <!-- Ornamental border top eliminado -->
+                    <div class="simple-date">
+                        <span class="date-text">20.12.2025</span>
+                    </div>
+                    <div class="couple-initials-main">
+                        <div class="main-initial-container">
+                            <span class="initial">M</span>
+                        </div>
+                        <div class="heart-divider">
+                            <svg class="elegant-heart-main" viewBox="0 0 100 100" width="50" height="50">
+                                <path d="M50,85 C25,65 10,45 10,30 C10,20 20,10 30,10 C40,10 50,20 50,30 C50,20 60,10 70,10 C80,10 90,20 90,30 C90,45 75,65 50,85 Z" fill="currentColor"/>
+                                <path class="heart-shine" d="M35,20 C40,15 45,18 50,25 C52,22 55,20 58,22 C60,24 58,28 55,30 C52,32 48,30 45,25 C42,22 38,22 35,20 Z" fill="rgba(255,255,255,0.4)"/>
+                            </svg>
+                        </div>
+                        <div class="main-initial-container">
+                            <span class="initial">K</span>
+                        </div>
+                    </div>
+                    <!-- Ornamental border bottom eliminado -->
+                    <h1 class="couple-names-main">
+                        <span class="name-part">MIRIAN</span>
+                        <span class="ampersand">&</span>
+                        <span class="name-part">KOKY</span>
+                    </h1>
+                    <div class="quote-container">
+                        <div class="quote-marks left">"</div>
+                        <p class="wedding-quote">Todos somos mortales, hasta el primer beso y la segunda copa de vino</p>
+                        <div class="quote-marks right">"</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Contador regresivo elegante -->
+        <section class="countdown-elegant">
+            <div class="countdown-frame">
+                <div class="section-ornament">
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+                <h2 class="countdown-title">Faltan</h2>
+                <div class="countdown-display" id="countdownDisplay">
+                    <div class="count-item">
+                        <div class="simple-count-circle">
+                            <span id="days">00</span>
+                        </div>
+                        <label>días</label>
+                    </div>
+                    <div class="count-item">
+                        <div class="simple-count-circle">
+                            <span id="hours">00</span>
+                        </div>
+                        <label>horas</label>
+                    </div>
+                    <div class="count-item">
+                        <div class="simple-count-circle">
+                            <span id="minutes">00</span>
+                        </div>
+                        <label>minutos</label>
+                    </div>
+                    <div class="count-item">
+                        <div class="simple-count-circle">
+                            <span id="seconds">00</span>
+                        </div>
+                        <label>segundos</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ceremonia con diseño elegante -->
+        <section class="event-section ceremony">
+            <div class="event-container">
+                <div class="event-header">
+                    <div class="event-icon-container">
+                        <i class="fas fa-church event-icon"></i>
+                        <div class="icon-halo"></div>
+                    </div>
+                    <h2 class="section-title">Ceremonia</h2>
+                    <div class="section-divider">
+                        <div class="divider-ornament"></div>
+                    </div>
+                </div>
+                <div class="event-details-grid">
+                    <div class="detail-card day-card">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4>Día</h4>
+                            <p class="detail-main">Sabado 20 de Diciembre</p>
+                            <p class="detail-sub">10:00 hs</p>
+                        </div>
+                        <div class="card-decoration"></div>
+                    </div>
+                    <div class="detail-card directions-card">
+                        <div class="card-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="card-content">
+                            <h4>Dirección</h4>
+                            <p class="detail-main">Quinta Don Aniceto</p>
+                            <p class="detail-sub">Caacupé, Paraguay</p>
+                            <button class="action-btn elegant-secondary" onclick="verUbicacion()">
+                                <i class="fas fa-directions"></i>
+                                <span>¿Cómo llegar?</span>
+                            </button>
+                        </div>
+                        <div class="card-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fiesta con más elementos visuales -->
+        <section class="party-section">
+            <div class="party-bg-elements">
+                <div class="party-sparkle sp-1"></div>
+                <div class="party-sparkle sp-2"></div>
+                <div class="party-sparkle sp-3"></div>
+                <div class="party-sparkle sp-4"></div>
+            </div>
+            <div class="section-container">
+                <div class="section-header-elaborate">
+                    <div class="party-icon-container">
+                        <i class="fas fa-champagne-glasses party-icon"></i>
+                        <div class="icon-burst"></div>
+                    </div>
+                    <h2 class="section-title-fancy">Fiesta</h2>
+                    <p class="section-subtitle">Hagamos juntos una fiesta épica. Aquí algunos detalles a tener en cuenta.</p>
+                    <div class="fancy-divider">
+                        <div class="divider-gem"></div>
+                        <div class="divider-line"></div>
+                        <div class="divider-gem"></div>
+                    </div>
+                </div>
+
+                <div class="party-grid">
+                    <div class="party-card dress-code-card">
+                        <div class="card-header">
+                            <div class="card-icon-fancy">
+                                <i class="fas fa-tuxedo"></i>
+                            </div>
+                            <h3>Dress Code</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="dress-icons">
+                                <i class="fas fa-hat-cowboy gentleman-icon"></i>
+                                <span class="dress-text">Tenida Elegante</span>
+                                <i class="fas fa-female lady-icon"></i>
+                            </div>
+                            <p class="card-subtitle">Paleta de colores sugerida:<br>
+                            <span style="color: #000; font-weight: bold;">Negro</span> • 
+                            <span style="color: #333; font-weight: bold;">Blanco</span> • 
+                            <span style="color: #555; font-weight: bold;">Gris Oscuro</span><br>
+                            <small style="color: #C4622D; font-weight: bold;">Para la novia: Solo Blanco</small></p>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+
+                    <div class="party-card adults-card">
+                        <div class="card-header">
+                            <div class="card-icon-fancy">
+                                <i class="fas fa-wine-glass-alt"></i>
+                            </div>
+                            <h3>Solo Adultos</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="main-text">Esta celebración será solo para adultos</p>
+                            <p class="card-subtitle">Agradecemos su comprensión</p>
+                            <div class="adults-decoration">
+                                <div class="elegant-dot"></div>
+                                <div class="elegant-dot"></div>
+                                <div class="elegant-dot"></div>
+                            </div>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regalos con diseño lujoso -->
+        <section class="gifts-section">
+            <div class="gifts-bg-pattern"></div>
+            <div class="gifts-container">
+                <div class="gifts-header">
+                    <div class="gift-icon-elaborate">
+                        <i class="fas fa-gift"></i>
+                        <div class="gift-ribbon"></div>
+                        <div class="gift-sparkles">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <h2 class="gifts-title">Regalos</h2>
+                </div>
+                <div class="gift-content-card">
+                    <div class="card-inner">
+                        <div class="gift-message-container">
+                            <div class="message-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <p class="gift-message">
+                                Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo, 
+                                <strong class="highlight">una contribución para nuestra luna de miel</strong> 
+                                nos ayudaría a crear recuerdos inolvidables juntos.<br><br>
+                                <strong style="color: #C4622D;">Alias: 0986489347</strong>
+                            </p>
+                            <div class="message-decoration">
+                                <div class="deco-line"></div>
+                                <svg class="deco-heart" viewBox="0 0 100 100" width="20" height="20">
+                                    <path d="M50,85 C25,65 10,45 10,30 C10,20 20,10 30,10 C40,10 50,20 50,30 C50,20 60,10 70,10 C80,10 90,20 90,30 C90,45 75,65 50,85 Z" fill="currentColor"/>
+                                </svg>
+                                <div class="deco-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer elaborado -->
+        <footer class="elegant-footer">
+            <div class="footer-bg-pattern"></div>
+            <div class="footer-content">
+                <div class="footer-frame">
+                    <!-- Ornamental border top eliminado -->
+                    <div class="footer-heart-elaborate">
+                        <svg class="elegant-heart" viewBox="0 0 100 100" width="40" height="40">
+                            <path d="M50,85 C25,65 10,45 10,30 C10,20 20,10 30,10 C40,10 50,20 50,30 C50,20 60,10 70,10 C80,10 90,20 90,30 C90,45 75,65 50,85 Z" fill="currentColor"/>
+                            <path class="heart-shine" d="M35,20 C40,15 45,18 50,25 C52,22 55,20 58,22 C60,24 58,28 55,30 C52,32 48,30 45,25 C42,22 38,22 35,20 Z" fill="rgba(255,255,255,0.3)"/>
+                        </svg>
+                    </div>
+                    <!-- Ornamental border bottom eliminado -->
+                    <h3 class="footer-names">MIRIAN & KOKY</h3>
+                    <div class="footer-date">20 • Diciembre • 2025</div>
+                    <div class="footer-actions-elaborate">
+                        <button class="footer-btn primary-footer" onclick="confirmarAsistencia()">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Confirmar asistencia<br></span>
+                            <div class="btn-shine"></div>
+                        </button>
+                        <button class="footer-btn" style="background: linear-gradient(135deg, #C4622D, #E8915B); color: white;" onclick="verUbicacion()">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Ver ubicación</span>
+                        </button>
+                    </div>
+                    <div class="footer-ornament">
+                        <div class="ornament-line"></div>
+                        <i class="fas fa-infinity"></i>
+                        <div class="ornament-line"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
