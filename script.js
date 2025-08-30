@@ -1,3 +1,45 @@
+// Mostrar invitación al hacer click en la carta
+document.addEventListener('DOMContentLoaded', function() {
+    var envelope = document.getElementById('envelope-view');
+    if (envelope) {
+        envelope.addEventListener('click', function() {
+            envelope.style.display = 'none';
+            var mainInvitation = document.getElementById('main-invitation');
+            if (mainInvitation) {
+                mainInvitation.style.display = '';
+            }
+        });
+    }
+});
+
+// Control de música
+function toggleMusic() {
+    var audio = document.getElementById('backgroundMusic');
+    var button = document.getElementById('musicButton');
+    var icon = document.getElementById('musicIcon');
+    
+    if (audio.paused) {
+        audio.play();
+        button.classList.remove('paused');
+        icon.className = 'fas fa-music';
+    } else {
+        audio.pause();
+        button.classList.add('paused');
+        icon.className = 'fas fa-pause';
+    }
+}
+
+// Inicializar música en pausa
+document.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('backgroundMusic');
+    var button = document.getElementById('musicButton');
+    
+    if (audio && button) {
+        audio.volume = 0.3; // Volumen al 30%
+        button.classList.add('paused');
+    }
+});
+
 // Cuenta regresiva hasta el 20 de diciembre de 2025, 10:00 AM
 function updateCountdown() {
     const targetDate = new Date('2025-12-20T10:00:00');
