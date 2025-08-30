@@ -88,7 +88,7 @@ function confirmarAsistencia() {
 }
 
 function verUbicacion() {
-    // Reemplaza la URL por la ubicación real del evento
-    var url = 'https://goo.gl/google.com/maps/place/Quinta+Don+Aniceto/data=!4m2!3m1!1s0x0:0x7531a20b708a7c15?sa=X&ved=1t:2428&ictx=111/';
+    // URL corregida para Quinta Don Aniceto en Caacupé, Paraguay
+    var url = 'https://maps.google.com/maps?q=Quinta+Don+Aniceto,+Caacupé,+Paraguay&hl=es&gl=py';
     window.open(url, '_blank');
 }
