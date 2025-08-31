@@ -67,11 +67,11 @@ function updateCountdown() {
         </div>
         <div class="count-item">
             <div class="simple-count-circle"><span id="minutes">${minutes}</span></div>
-            <label>minutos</label>
+            <label>min</label>
         </div>
         <div class="count-item">
             <div class="simple-count-circle"><span id="seconds">${seconds}</span></div>
-            <label>segundos</label>
+            <label>seg</label>
         </div>
     `;
 }
