@@ -154,8 +154,8 @@ body {
 
 .particle {
     position: absolute;
-    color: rgba(196, 98, 45, 0.15); /* Más transparente: era 0.3, ahora 0.15 */
-    font-size: 16px; /* Más pequeño: era 20px, ahora 16px */
+    color: rgba(196, 98, 45, 0.25); /* Más visible: era 0.15, ahora 0.25 */
+    font-size: 18px; /* Más grande: era 16px, ahora 18px */
     animation: float-up linear infinite;
     pointer-events: none;
 }
@@ -166,10 +166,10 @@ body {
         opacity: 0;
     }
     15% { /* Aparece más gradualmente */
-        opacity: 0.6; /* Menos opaco: era 1, ahora 0.6 */
+        opacity: 0.8; /* Más opaco: era 0.6, ahora 0.8 */
     }
     85% { /* Desaparece más gradualmente */
-        opacity: 0.6;
+        opacity: 0.8;
     }
     100% {
         transform: translateY(-150px) rotate(180deg); /* Menos rotación: era 360deg, ahora 180deg */
@@ -1288,16 +1288,16 @@ body {
     
     /* Partículas aún más sutiles en móviles pequeños */
     .particle {
-        font-size: 12px;
-        color: rgba(196, 98, 45, 0.08);
+        font-size: 14px; /* era 12px, ahora 14px */
+        color: rgba(196, 98, 45, 0.15); /* era 0.08, ahora 0.15 */
     }
 }
 
 /* Partículas más sutiles en móviles */
 @media (max-width: 768px) {
     .particle {
-        font-size: 14px;
-        color: rgba(196, 98, 45, 0.1);
+        font-size: 16px; /* era 14px, ahora 16px */
+        color: rgba(196, 98, 45, 0.18); /* era 0.1, ahora 0.18 */
     }
     
     .particles-container {

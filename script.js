@@ -82,7 +82,7 @@ updateCountdown();
 // Crear partículas de corazones
 function createParticles() {
     const container = document.getElementById('particlesContainer');
-    const particleCount = 6; // Reducido de 15 a 6
+    const particleCount = 8; // Aumentado de 6 a 8
     
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
@@ -98,8 +98,8 @@ function createParticles() {
         
         // Posición aleatoria
         particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 15 + 's'; // Más delay (era 10s)
-        particle.style.animationDuration = (Math.random() * 5 + 8) + 's'; // Más lento (era 3+2)
+        particle.style.animationDelay = Math.random() * 12 + 's'; // Reducido de 15s a 12s
+        particle.style.animationDuration = (Math.random() * 4 + 7) + 's'; // Reducido de 5+8 a 4+7
         
         container.appendChild(particle);
     }
@@ -132,5 +132,11 @@ function confirmarAsistencia() {
 function verUbicacion() {
     // URL corregida para Quinta Don Aniceto en Caacupé, Paraguay
     var url = 'https://maps.google.com/maps?q=Quinta+Don+Aniceto,+Caacupé,+Paraguay&hl=es&gl=py';
+    window.open(url, '_blank');
+}
+
+function verUbicacion2() {
+    // Parroquia nuestra señora de los milagros de caccupe
+    var url = 'https://maps.app.goo.gl/x7FtjcogcRZd6TnZA';
     window.open(url, '_blank');
 }
