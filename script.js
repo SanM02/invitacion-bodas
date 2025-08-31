@@ -79,6 +79,30 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
+// Crear partículas de corazones
+function createParticles() {
+    const container = document.getElementById('particlesContainer');
+    const particleCount = 15;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.innerHTML = '♥';
+        
+        // Posición aleatoria
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 10 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        
+        container.appendChild(particle);
+    }
+}
+
+// Inicializar partículas
+document.addEventListener('DOMContentLoaded', function() {
+    createParticles();
+});
+
 function confirmarAsistencia() {
     // Reemplaza el número y el mensaje por el que desees
     var telefono = '595986489347'; // Ejemplo: 595981234567
