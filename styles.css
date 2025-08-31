@@ -154,8 +154,8 @@ body {
 
 .particle {
     position: absolute;
-    color: rgba(196, 98, 45, 0.3);
-    font-size: 20px;
+    color: rgba(196, 98, 45, 0.15); /* Más transparente: era 0.3, ahora 0.15 */
+    font-size: 16px; /* Más pequeño: era 20px, ahora 16px */
     animation: float-up linear infinite;
     pointer-events: none;
 }
@@ -165,14 +165,14 @@ body {
         transform: translateY(100vh) rotate(0deg);
         opacity: 0;
     }
-    10% {
-        opacity: 1;
+    15% { /* Aparece más gradualmente */
+        opacity: 0.6; /* Menos opaco: era 1, ahora 0.6 */
     }
-    90% {
-        opacity: 1;
+    85% { /* Desaparece más gradualmente */
+        opacity: 0.6;
     }
     100% {
-        transform: translateY(-100px) rotate(360deg);
+        transform: translateY(-150px) rotate(180deg); /* Menos rotación: era 360deg, ahora 180deg */
         opacity: 0;
     }
 }
@@ -1284,6 +1284,24 @@ body {
 @media (max-width: 360px) {
     .fondo-img {
         object-position: 85% center; /* Aún más hacia la derecha en pantallas muy pequeñas */
+    }
+    
+    /* Partículas aún más sutiles en móviles pequeños */
+    .particle {
+        font-size: 12px;
+        color: rgba(196, 98, 45, 0.08);
+    }
+}
+
+/* Partículas más sutiles en móviles */
+@media (max-width: 768px) {
+    .particle {
+        font-size: 14px;
+        color: rgba(196, 98, 45, 0.1);
+    }
+    
+    .particles-container {
+        z-index: 0; /* Aún más atrás en móviles */
     }
 }
 

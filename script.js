@@ -82,17 +82,24 @@ updateCountdown();
 // Crear partículas de corazones
 function createParticles() {
     const container = document.getElementById('particlesContainer');
-    const particleCount = 15;
+    const particleCount = 6; // Reducido de 15 a 6
     
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-        particle.innerHTML = '♥';
+        
+        // Detectar si es móvil para usar símbolo diferente
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            particle.innerHTML = '•'; // Punto simple en móvil
+        } else {
+            particle.innerHTML = '♥'; // Corazón en desktop
+        }
         
         // Posición aleatoria
         particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 10 + 's';
-        particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        particle.style.animationDelay = Math.random() * 15 + 's'; // Más delay (era 10s)
+        particle.style.animationDuration = (Math.random() * 5 + 8) + 's'; // Más lento (era 3+2)
         
         container.appendChild(particle);
     }
@@ -101,6 +108,17 @@ function createParticles() {
 // Inicializar partículas
 document.addEventListener('DOMContentLoaded', function() {
     createParticles();
+    
+    // Regenerar partículas cuando cambie el tamaño de pantalla
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            const container = document.getElementById('particlesContainer');
+            container.innerHTML = ''; // Limpiar partículas existentes
+            createParticles(); // Crear nuevas con el tamaño correcto
+        }, 250);
+    });
 });
 
 function confirmarAsistencia() {
